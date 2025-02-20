@@ -1,0 +1,220 @@
+
+.active a{
+    color: white;
+}
+.market-container {
+    width: 98%;
+    margin: auto;
+}
+.market-container span {
+    margin: 20px 0px 5px 0;
+    font-size: 45px;
+    letter-spacing: 3px;
+}
+.market-grid {    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1px;
+    padding: 20px 5px;
+
+}
+.market-box {
+    width: 15%; /* Adjusts to fit 4 per row on larger screens */
+    margin-bottom: 1%;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid gray;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.market-box:hover {
+    transform: scale(1.05);
+}
+.market-box img {
+    width: 100%;
+    border-radius: 5px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.blog-content {
+    display: none;
+    text-align: left;
+}
+.blog-content img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+.bloghead {
+    margin: 0px 20px;
+    font-size: 45px;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+}
+
+.blog-text-box {
+    flex: 1;
+    background: white;
+    margin: 0px 20px;
+    width: 40%;
+}
+
+.blog-text-box span{
+    font-size: 18px;
+}
+
+.blog-slider-container {
+    flex: 1;
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+}
+
+.blogggg{
+    width: 50%;
+    height: auto;
+    max-width: 500px;
+}
+.blogggg button{
+    margin: 10px 0px;
+    padding: 10px 20px;
+    border: 2px solid rgb(2, 2, 155);
+    color: rgb(6, 6, 141);
+    background-color: transparent;
+}
+
+.blog-slider {
+    display: flex;
+    width: 300%;
+    animation: slide 9s infinite;
+}
+
+.blog-slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.blog-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+.blog-content3{
+    display: none;
+}
+
+.container-comerce {
+    display: flex;
+    gap: 20px;
+    max-width: 97%;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: auto;
+}
+/* General box styling */
+.box-comerce {
+    flex: 1;
+    background-color: white;
+    padding: 0px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+/* Styling for image boxes */
+.image-box-comerce {
+    max-width: 100%;
+    height: 600px;    
+
+}
+
+.img1{
+    background-image: url(happy-business-partners-shaking-hands-meeting-office_252847-50174.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    zoom: 70%;
+}
+
+.img2{
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    background-image: url(couple\ relax.jpeg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Styling for text box */
+.text-box-comerce {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+}
+
+
+
+@media (max-width: 1024px) {
+    .market-box {
+        width: 31%; /* 3 per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .market-box {
+        width: 45%;
+    }
+
+    .blog-container {
+        display: block; 
+        width: 100%;
+        
+    }
+
+    .blog-text-box {
+        text-align: justify;
+        width: 97%;
+        margin: 20px auto;
+    }
+
+    .blog-slider-container {
+        width: 100%;
+
+    }
+    
+    .blogggg{
+        width: 100%;
+        max-width: 100%;
+        margin: auto;
+    }
+
+}
+@media (max-width: 480px) {
+    .market-box {
+        width: 100%;
+    }
+}
