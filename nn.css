@@ -1,0 +1,287 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #eee;
+}
+
+header {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+header a {
+    margin: 40px;
+}
+
+.carousel {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -50px;
+    position: relative;
+}
+
+
+.carousel .list .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.carousel .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .list .item .content {
+    position: absolute;
+    top: 15%;
+    width: 80%;
+    max-width: 900px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: white;
+    text-shadow: 0 5px 10px #000;
+}
+
+.carousel .list .item .content .author {
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.carousel .list .item .content .title,
+.carousel .list .item .content .topic {
+    font-weight: bold;
+    font-size: 5em;
+    line-height: 1.3em;
+}
+
+.carousel .list .item .content .title {
+    color: #f1683a;
+}
+
+.carousel .list .item .content .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.carousel .list .item .content button {
+    border: none;
+    background: rgb(1, 27, 79);
+    letter-spacing: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel .list .item .content button:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid #eee;
+}
+
+/* Thumbnail Section - Slightly Out but Responsive */
+.thumbnail {
+    position: absolute;
+    top: 80%;
+    right: -30px; /* Slightly out */
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
+    width: auto;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.thumbnail .items {
+    width: 120px;
+    height: 180px;
+    flex-shrink: 1; /* Ensures it shrinks responsively */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.thumbnail .items:hover {
+    left: 0;
+}
+
+.thumbnail .items img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.thumbnail .items .content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.thumbnail .items .title {
+    font-weight: bold;
+}
+
+.time{
+    width: 0;
+    height: 5px;
+    background-color: #e68900;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes timeRunning{
+    to{
+        width: 0;
+    }
+}
+
+/* Navigation Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    gap: 10px;
+}
+
+.arrow button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(105, 105, 105);
+    border: none;
+    font-family: monospace;
+    color: white;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.arrow button:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+/* Keyframes for Animation */
+@keyframes showContent {
+    to {
+        opacity: 1;
+        filter: none;
+        transform: translateY(0);
+    }
+}
+
+.carousel.next .list .item:nth-child(1) img {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 10px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage {
+    to {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+/* Hide Unwanted Overflow */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* RESPONSIVENESS */
+@media screen and (max-width: 1024px) {
+    .carousel .list .item .content {
+        max-width: 90%;
+        padding: 0 5%;
+    }
+    
+    .thumbnail {
+        left: -50px; /* Adjusted for smaller screens */
+    }
+
+    .arrow {
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel .list .item .content .title {
+        font-size: 3em;
+    }
+
+    .thumbnail {
+        left: -40px; /* More visible but still slightly out */
+    }
+
+    .arrow {
+        right: 3%;
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel .list .item .content .title {
+        font-size: 2em;
+    }
+
+    .thumbnail {
+        left: -30px; /* Slightly visible for smaller screens */
+    }
+
+    .arrow {
+        width: 70px;
+        right: 5%;
+    }
+
+    .time {
+        font-size: 10px;
+        padding: 3px 7px;
+    }
+}
