@@ -761,6 +761,23 @@
 
       <script type="text/javascript">
 
+let lastScrollTop = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", function () {
+    let currentScroll = window.scrollY;
+
+    if (currentScroll < lastScrollTop) {
+        // User is scrolling up, show the header
+        header.style.top = "0";
+    } else {
+        // User is scrolling down, hide the header
+        header.style.top = "-100px"; // Adjust based on header height
+    }
+
+    lastScrollTop = currentScroll;
+});
+
 
 document.querySelectorAll('.tab-link').forEach(button => {
         button.addEventListener('click', () => {
