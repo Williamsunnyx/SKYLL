@@ -1880,7 +1880,7 @@ form{
   }
   
 .openNav{
-    font-size:20px;
+    font-size:30px;
     cursor:pointer;
     font-weight: bolder;
     color: white;
@@ -1889,6 +1889,10 @@ form{
     padding: 5px 10px 5px 30px;
     border-radius: 0px 10px 10px 0px;
     display: none;
+    height: 50px;
+}
+.openNav b{
+    color: whitesmoke;
 }
 
 
@@ -2032,7 +2036,6 @@ form{
 
   .openNav{
     display: block;
-    color: white;
   }
 
   .national{
