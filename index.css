@@ -4,10 +4,19 @@ body {
     padding: 0;
     background-color: black;
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     overflow: hidden;
     box-sizing: border-box;
 }
+
+/* Hide Unwanted Overflow */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
 
 .loader-container {
     position: absolute;
@@ -72,11 +81,6 @@ body {
 }
 
 
-/* Hide Unwanted Overflow */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 
 a{
     text-decoration: none;
@@ -88,7 +92,7 @@ header{
     width: 100%;
     max-width: 100%;
     margin: auto;
-    height: 50px;
+    height: 20px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -177,10 +181,11 @@ header a{
 }
 
 
-.carousel .list .item .content button:nth-child(2){
+.carousel .list .item .content button:nth-child(2) {
     background-color: transparent;
     color: #022674;
     border: 1.5px solid #eeeeee;
+    background-color: transparent;
 }
 
 /* Thumbnail Section */
@@ -460,5 +465,23 @@ body{
 .carousel .list .item .content .topic{
     font-size: 4em;
     line-height: 1.0em;
+}
+
+
+body {
+
+    font-size: 14px;
+}
+
+
+.carousel .list .item .content .author{
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+
+
+.carousel .list .item .content .topic{
+    letter-spacing: 10px;
+    font-size: 30px;
 }
 }

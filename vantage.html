@@ -563,6 +563,75 @@
   </div>
 
 
+  <div class="first-carousel-container">
+    <div class="first-carousel">
+        <!-- Carousel Item 1 -->
+        <div id="first-carousel-item-1" class="first-carousel-item">
+            <div class="first-carousel-card">
+                <img src="hero-7.png" alt="Product 1">
+                <div class="first-card-content">
+                    <h3>Product 1</h3>
+                    <p>This is the description for product 1.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Item 2 -->
+        <div id="first-carousel-item-2" class="first-carousel-item">
+            <div class="first-carousel-card">
+                <img src="hero-5.png" alt="Product 2">
+                <div class="first-card-content">
+                    <h3>Product 2</h3>
+                    <p>This is the description for product 2.</p>
+                </div>
+  
+  
+            </div>
+            
+            
+        </div>
+        <!-- Carousel Item 3 -->
+        <div id="first-carousel-item-3" class="first-carousel-item">
+            <div class="first-carousel-card">
+                <img src="hero-8.png" alt="Product 3">
+                <div class="first-card-content">
+                    <h3>Product 3</h3>
+                    <p>This is the description for product 3.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Item 4 -->
+        <div id="first-carousel-item-4" class="first-carousel-item">
+            <div class="first-carousel-card">
+                <img src="hero-4.webp" alt="Product 4">
+                <div class="first-card-content">
+                    <h3>Product 4</h3>
+                    <p>This is the description for product 4.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Thumbnails Navigation -->
+  <div class="first-thumbnails">
+    <!-- Thumbnail 3 -->
+    <div id="first-thumbnail-3" class="first-thumbnail-container">
+        <img src="heroCat.png" alt="Thumbnail 3" class="first-thumbnail">
+    </div>
+    <div id="first-thumbnail-3" class="first-thumbnail-container">
+        <img src="heroRemote.png" alt="Thumbnail 3" class="first-thumbnail">
+    </div>
+  
+    <div id="first-thumbnail-3" class="first-thumbnail-container">
+        <img src="herocctv.png" alt="Thumbnail 3" class="first-thumbnail">
+    </div>
+  
+    <!-- Thumbnail 4 -->
+    <div id="first-thumbnail-4" class="first-thumbnail-container">
+        <img src="heroPhone.png" alt="Thumbnail 4" class="first-thumbnail">
+    </div>
+  </div>
+  
 
   
 <!-- BANNER -->
@@ -842,7 +911,6 @@
 </div>
 
 
-
 <section id="mainbody">
 
     <div class=".carousel-body">
@@ -906,7 +974,7 @@
 
 
 
-
+<iframe src="slider.html" width="100%" height="700px" style="border:1px solid #ccc;"></iframe>
 
   <!-- Navigation Menu -->
   <div class="nav-container">
@@ -1842,6 +1910,68 @@
 
 
 <script type="text/javascript">
+let carouselIndex = 0;  // Changed variable name from `index` to `carouselIndex`
+const carouselO = document.querySelector('.first-carousel');
+const totalItems = document.querySelectorAll('.first-carousel-item').length;
+const thumbnails = document.querySelectorAll('.first-thumbnail');
+const thumbnailContainer = document.querySelector('.first-thumbnails');
+
+// Clone the items to enable infinite scrolling
+function cloneItems() {
+    const firstItem = document.querySelector('.first-carousel-item');
+    const lastItem = document.querySelector('.first-carousel-item:last-child');
+    carouselO.appendChild(firstItem.cloneNode(true));  // Clone the first item at the end
+    carouselO.insertBefore(lastItem.cloneNode(true), carouselO.firstChild);  // Clone the last item at the beginning
+    updateThumbnails();
+}
+
+// Move the carousel continuously
+function moveCarousel() {
+    const itemWidth = document.querySelector('.first-carousel-item').clientWidth;
+    carouselO.style.transition = "transform 1s ease-in-out"; // Set transition to make smooth scroll
+    carouselO.style.transform = `translateX(-${(carouselIndex + 1) * itemWidth}px)`; // Move to next item
+    carouselIndex++;
+
+    if (carouselIndex === totalItems) {
+        carouselIndex = 0; // Reset to first item (but invisible due to continuous clone)
+        setTimeout(() => {
+            carouselO.style.transition = "none";  // Disable transition temporarily for instant reset
+            carouselO.style.transform = `translateX(0)`;
+        }, 1000); // Wait for the transition to complete
+    }
+
+    updateThumbnails();
+}
+
+// Update thumbnail positions to follow the carousel movement
+function updateThumbnails() {
+    const itemWidth = document.querySelector('.first-carousel-item').clientWidth;
+    let transformValue = `translateX(-${(carouselIndex + 1) * itemWidth}px)`;  // Use `carouselIndex` here
+
+    // Update the corresponding thumbnail container based on the index
+    if (carouselIndex === 0) {
+        transformValue = "translateX(0)"; // Pin the first thumbnail
+    } else if (carouselIndex === 1) {
+        transformValue = `translateX(-${itemWidth}px)`; // Move to second thumbnail
+    } else if (carouselIndex === 2) {
+        transformValue = `translateX(-${2 * itemWidth}px)`; // Move to third thumbnail
+    } else if (carouselIndex === 3) {
+        transformValue = `translateX(-${3 * itemWidth}px)`; // Move to fourth thumbnail
+    }
+
+    thumbnailContainer.style.transition = "transform 1s ease-in-out";
+    thumbnailContainer.style.transform = transformValue;
+}
+
+// Autoplay the carousel every 5 seconds
+setInterval(moveCarousel, 5000);
+
+// Clone items after content loads for continuous movement
+document.addEventListener('DOMContentLoaded', () => {
+    cloneItems(); // Clones items on load
+});
+
+
 
   let lastScrollTop = 0;
 const header = document.querySelector("header");

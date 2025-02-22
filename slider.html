@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Slider with Thumbnails</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient;
+    background: -moz-radial-gradient(circle, yellow 30%, darkbrown 70%);
+    background: -webkit-gradient(circle, yellow 30%, darkbrown 70%);
+    background: -webkit-radial-gradient(circle, yellow 30%, darkbrown 70%);
+
+}
+
+.first-carousel-container {
+    width: 100%;
+    overflow: hidden;
+    height: 100vh; /* Full screen height */
+    position: relative;
+
+}
+
+.first-carousel {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    will-change: transform; /* Smooth transition */
+}
+
+.first-carousel-item {
+    min-width: 90%;/* make this full on screen*/
+    height: 100vh; /* Ensuring each carousel item takes up full viewport height */
+    position: relative;
+    justify-items: center;
+    margin: auto;
+    align-items: center;
+    background-color: black;
+    
+}
+
+.first-carousel-card img {
+    width: 80%;/* make this full on screen/
+    height: 100%; /* Full screen image */
+    object-fit: cover; /* Ensures the image covers the entire space */
+    align-items: center;
+    margin: auto;
+    position: relative;
+    left: 20%;
+    
+}
+
+.first-card-content {
+    position: absolute;
+    bottom: 50%;
+    left: 80px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.first-card-content h3 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.first-card-content p {
+    font-size: 16px;
+}
+
+.first-carousel-card:hover .first-card-content {
+    opacity: 1;
+}
+
+/* Thumbnails Container */
+.first-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    z-index: 10;
+}
+
+.first-thumbnail-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0.8;
+}
+
+.first-thumbnail {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.first-thumbnail:hover {
+    opacity: 1;
+}
+
+
+.first-thumbnail-container img {
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .first-card-content h3 {
+        font-size: 22px;
+    }
+
+    .first-card-content p {
+        font-size: 14px;
+    }
+
+    .first-thumbnail {
+        width: 40px;
+        height: 100px;
+    }
+
+    .first-carousel-item {
+        min-width: 100%;/* make this full on screen*/
+        height: 100vh; /* Ensuring each carousel item takes up full viewport height */
+        position: relative;
+        justify-items: center;
+        margin: auto;
+        align-items: center;
+        background-color: black;
+        
+    }
+    
+    .first-carousel-card img {
+        width: 100%;/* make this full on screen*/
+        left: 4%;
+        
+    }
+
+    .first-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
+
+
+}
+
+
+    </style>
+</head>
+<body>
+
+    
+        <div class="first-carousel-container">
+            <div class="first-carousel">
+                <!-- Carousel Item 1 -->
+                <div id="first-carousel-item-1" class="first-carousel-item">
+                    <div class="first-carousel-card">
+                        <img src="hero-7.png" alt="Product 1">
+                        <div class="first-card-content">
+                            <h3>ENTRANCE MANAGEMENT SOLUTIONS</h3>
+                            <p>This is the description for product 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Item 2 -->
+                <div id="first-carousel-item-2" class="first-carousel-item">
+                    <div class="first-carousel-card">
+                        <img src="hero-5.png" alt="Product 2">
+                        <div class="first-card-content">
+                            <h3>Product 2</h3>
+                            <p>This is the description for product 2.</p>
+                        </div>
+
+  
+                    </div>
+                    
+                    
+                </div>
+                <!-- Carousel Item 3 -->
+                <div id="first-carousel-item-3" class="first-carousel-item">
+                    <div class="first-carousel-card">
+                        <img src="hero-8.png" alt="Product 3">
+                        <div class="first-card-content">
+                            <h3>Product 3</h3>
+                            <p>This is the description for product 3.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Item 4 -->
+                <div id="first-carousel-item-4" class="first-carousel-item">
+                    <div class="first-carousel-card">
+                        <img src="hero-4.webp" alt="Product 4">
+                        <div class="first-card-content">
+                            <h3>Product 4</h3>
+                            <p>This is the description for product 4.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Thumbnails Navigation -->
+        <div class="first-thumbnails">
+            <!-- Thumbnail 3 -->
+            <div id="first-thumbnail-3" class="first-thumbnail-container">
+                <img src="heroCat.png" alt="Thumbnail 3" class="first-thumbnail">
+            </div>
+            <div id="first-thumbnail-3" class="first-thumbnail-container">
+                <img src="heroRemote.png" alt="Thumbnail 3" class="first-thumbnail">
+            </div>
+    
+            <div id="first-thumbnail-3" class="first-thumbnail-container">
+                <img src="herocctv.png" alt="Thumbnail 3" class="first-thumbnail">
+            </div>
+    
+            <!-- Thumbnail 4 -->
+            <div id="first-thumbnail-4" class="first-thumbnail-container">
+                <img src="heroPhone.png" alt="Thumbnail 4" class="first-thumbnail">
+            </div>
+        </div>
+    
+    <script>
+
+let carouselIndex = 0;  // Changed variable name from `index` to `carouselIndex`
+const carousel = document.querySelector('.first-carousel');
+const totalItems = document.querySelectorAll('.first-carousel-item').length;
+const thumbnails = document.querySelectorAll('.first-thumbnail');
+const thumbnailContainer = document.querySelector('.first-thumbnails');
+
+// Clone the items to enable infinite scrolling
+function cloneItems() {
+    const firstItem = document.querySelector('.first-carousel-item');
+    const lastItem = document.querySelector('.first-carousel-item:last-child');
+    carousel.appendChild(firstItem.cloneNode(true));  // Clone the first item at the end
+    carousel.insertBefore(lastItem.cloneNode(true), carousel.firstChild);  // Clone the last item at the beginning
+    updateThumbnails();
+}
+
+// Move the carousel continuously
+function moveCarousel() {
+    const itemWidth = document.querySelector('.first-carousel-item').clientWidth;
+    carousel.style.transition = "transform 1s ease-in-out"; // Set transition to make smooth scroll
+    carousel.style.transform = `translateX(-${(carouselIndex + 1) * itemWidth}px)`; // Move to next item
+    carouselIndex++;
+
+    if (carouselIndex === totalItems) {
+        carouselIndex = 0; // Reset to first item (but invisible due to continuous clone)
+        setTimeout(() => {
+            carousel.style.transition = "none";  // Disable transition temporarily for instant reset
+            carousel.style.transform = `translateX(0)`;
+        }, 1000); // Wait for the transition to complete
+    }
+
+    updateThumbnails();
+}
+
+// Update thumbnail positions to follow the carousel movement
+function updateThumbnails() {
+    const itemWidth = document.querySelector('.first-carousel-item').clientWidth;
+    let transformValue = `translateX(-${(carouselIndex + 1) * itemWidth}px)`;  // Use `carouselIndex` here
+
+    // Update the corresponding thumbnail container based on the index
+    if (carouselIndex === 0) {
+        transformValue = "translateX(0)"; // Pin the first thumbnail
+    } else if (carouselIndex === 1) {
+        transformValue = `translateX(-${itemWidth}px)`; // Move to second thumbnail
+    } else if (carouselIndex === 2) {
+        transformValue = `translateX(-${2 * itemWidth}px)`; // Move to third thumbnail
+    } else if (carouselIndex === 3) {
+        transformValue = `translateX(-${3 * itemWidth}px)`; // Move to fourth thumbnail
+    }
+
+    thumbnailContainer.style.transition = "transform 1s ease-in-out";
+    thumbnailContainer.style.transform = transformValue;
+}
+
+// Autoplay the carousel every 5 seconds
+setInterval(moveCarousel, 5000);
+
+// Clone items after content loads for continuous movement
+document.addEventListener('DOMContentLoaded', () => {
+    cloneItems(); // Clones items on load
+});
+
+    </script>
+</body>
+</html>
