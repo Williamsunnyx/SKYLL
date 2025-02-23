@@ -22,6 +22,7 @@ body {
 
 }
 
+
 .first-carousel-container {
     width: 100%;
     overflow: hidden;
@@ -48,7 +49,7 @@ body {
 }
 
 .first-carousel-card img {
-    width: 80%;/* make this full on screen/
+    width: 60%;/* make this full on screen/
     height: 100%; /* Full screen image */
     object-fit: cover; /* Ensures the image covers the entire space */
     align-items: center;
@@ -62,15 +63,20 @@ body {
     position: absolute;
     bottom: 50%;
     left: 80px;
-    color: white;
+    color: rgb(225, 222, 222);
     padding: 10px;
     border-radius: 5px;
-    transition: opacity 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    text-shadow: 0px 4px 20px  rgba(45, 3, 3, 0.779);
+    cursor: pointer;
 }
 
 .first-card-content h3 {
     font-size: 50px;
     margin-bottom: 10px;
+}
+.first-card-content h3:hover{
+    color: whitesmoke;
 }
 
 .first-card-content p {
@@ -131,42 +137,50 @@ body {
         font-size: 14px;
     }
 
+    .first-card-content {
+    position: absolute;
+    top: 80%;
+    left: 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
     .first-thumbnail {
         width: 40px;
-        height: 100px;
+        height: 80px;
     }
 
     .first-carousel-item {
-        min-width: 100%;/* make this full on screen*/
         height: 100vh; /* Ensuring each carousel item takes up full viewport height */
-        position: relative;
-        justify-items: center;
-        margin: auto;
-        align-items: center;
-        background-color: black;
+        top: 90%;
+        padding-top: 90px;
+
         
     }
     
     .first-carousel-card img {
-        width: 100%;/* make this full on screen*/
-        left: 4%;
+        width: 115%;/* make this full on screen*/
+        left: -1%;
+        bottom: -10%;
+        z-index: 1;
         
     }
 
+    .first-carousel-container {
+        width: 100%;
+        overflow: hidden;
+        height: 100vh; /* Full screen height */
+        position: relative;
+    
+    }
     .first-thumbnails {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    z-index: 10;
-    display: none;
+        gap: 10px;
+        bottom: 20%;
+    }
+    
 }
-
-
-}
-
 
     </style>
 </head>
@@ -180,7 +194,7 @@ body {
                     <div class="first-carousel-card">
                         <img src="hero-7.png" alt="Product 1">
                         <div class="first-card-content">
-                            <h3>ENTRANCE MANAGEMENT SOLUTIONS</h3>
+                            <h3>Control Access, Anytime, Anywhere</h3>
                             <p>This is the description for product 1.</p>
                         </div>
                     </div>
@@ -190,8 +204,9 @@ body {
                     <div class="first-carousel-card">
                         <img src="hero-5.png" alt="Product 2">
                         <div class="first-card-content">
-                            <h3>Product 2</h3>
-                            <p>This is the description for product 2.</p>
+                            <h3>Your Eyes When You’re Away</h3>
+                            <p>Monitor, control, and secure—all from your phone</p>
+                            <a href="product.html"><button>SHOP</button></a>
                         </div>
 
   
@@ -204,8 +219,8 @@ body {
                     <div class="first-carousel-card">
                         <img src="hero-8.png" alt="Product 3">
                         <div class="first-card-content">
-                            <h3>Product 3</h3>
-                            <p>This is the description for product 3.</p>
+                            <h3>Only the Right People Get In</h3>
+                            <p>Biometric, keyless, and AI-powered access solutions.</p>
                         </div>
                     </div>
                 </div>
@@ -214,8 +229,8 @@ body {
                     <div class="first-carousel-card">
                         <img src="hero-4.webp" alt="Product 4">
                         <div class="first-card-content">
-                            <h3>Product 4</h3>
-                            <p>This is the description for product 4.</p>
+                            <h3>See Everything, Secure Everything</h3>
+                            <p>Surveillance, alarms, and smart locks—all in one place.</p>
                         </div>
                     </div>
                 </div>

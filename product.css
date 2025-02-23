@@ -337,8 +337,8 @@ body.fade-out {
       
 
 
-header .active{
-  background-color: rgb(4, 38, 100);
+header .stay{
+  background-color: #057591;
   color: white;
 }
 

@@ -4,17 +4,22 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+.custom-cursor {
+    cursor: url('cursor1.png'), auto; /* Fallback to default cursor */
+  }
+
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: default;
     zoom: 90%;
     color: rgb(104, 104, 104);
     transition: 0.5s ease-in;
     background-color: white;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    cursor: url('cursor1.png'), default; /* Fallback to default cursor */
+
 }
 p{
     text-transform: capitalize;
@@ -37,6 +42,8 @@ a {
     text-decoration: none;
     transition: color 0.3s ease;
     color: rgb(104, 104, 104);
+    cursor: url('cursor1.png'), pointer; /* Fallback to default cursor */
+
   }
 
   
@@ -85,7 +92,7 @@ a {
 }
 
 .dropdown-content{
-     background-color: rgb(4, 38, 100);
+     background: radial-gradient(circle, black,rgb(15, 2, 2),black);
      padding: 10px;
      position: relative;
      bottom: 30px;
@@ -115,7 +122,7 @@ a {
 }
 
 .up{
-    background-color:  rgb(4, 38, 100);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(30, 3, 3));
     height: 10px;
     
 }
@@ -160,7 +167,7 @@ a {
     background-color: gray;
 }
 #dropdown li:hover{
-    background-color:  rgb(4, 38, 100);
+    background-color:   #007f9f;
     color: whitesmoke;
 }
 
@@ -193,7 +200,7 @@ a {
 }
 
 .show .span:hover{
-    background-color:  rgb(4, 38, 100);
+    background-color:   #007f9f;
     color: white;
 }
 
@@ -212,7 +219,7 @@ a {
 
 .show:hover .showcontent{
     display: block;
-    border-top: 3px solid   rgb(34, 40, 152); 
+    border-top: 3px solid    #2697b4; 
  
 }
 
@@ -239,19 +246,19 @@ a {
     align-items: center;
     margin: 0;
     padding: 0;
-    box-shadow: 0px 0px 5px grey;
     margin-bottom: 20px;
+    background-color: white;
 }
 .slider{
     width: 100%;
-    height: 400px;
+    height: 300px;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .slides{
     width: 500%;
-    height: 350px;
+    height: 250px;
     display: flex;
 }
 /* try change to text */
@@ -266,7 +273,7 @@ a {
 
 .slide img{
     width: 100%;
-    height: 350px;
+    height: 250px;
 }
 
 /* css for Manual Navigation */
@@ -338,28 +345,28 @@ a {
 
 
 #radio1:checked ~ .navigation-auto .auto-btn1{
-    background:  rgb(4, 38, 100);
+    background: #ff7700;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 12% 50%);
     transition: .3s;
 
 }
 
 #radio2:checked ~ .navigation-auto .auto-btn2{
-    background:  rgb(4, 38, 100);
+    background:  #ff7700;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 12% 50%);
     transition: .3s;
     
 }
 
 #radio3:checked ~ .navigation-auto .auto-btn3{
-    background:  rgb(4, 38, 100);
+    background:  #ff7700;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 12% 50%);
     transition: .3s;
     
 }
 
 #radio4:checked ~ .navigation-auto .auto-btn4{
-    background:  rgb(4, 38, 100);
+    background:  #ff7700;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 12% 50%);
     transition: .3s;
 
@@ -373,7 +380,7 @@ a {
 .learbtn button{
     padding: 10px 20px;
     border-radius: 10px;
-    background-color:   rgb(4, 38, 100);
+    background-color:  #ff7700;
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -398,7 +405,7 @@ a {
 }
 
 .head{
-    background-color:  rgb(4, 38, 100);
+    background-color:   #027b9a;
     width: 100%;
     padding: 5px 0px;
     text-align: center;
@@ -540,7 +547,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    background-color:  rgb(4, 38, 100) ;
+    background-color:  #007f9f;
     padding: 0px 15px;
     margin-top: 80px;
     color: white;
@@ -563,6 +570,99 @@ a {
 
 }
 
+iframe{
+    width: 100%;
+    height: 550px;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Container for CTA */
+
+.cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    height: 70px;
+    background: linear-gradient(to right, black  30%, rgb(26, 1, 1), black);
+    bottom: 13px;
+
+
+  }
+  
+  /* Arrow Icon Animation for Large Screens */
+  .cta-arrow {
+    font-size: 40px; /* Set size for the arrow */
+    position: relative;
+    margin: 40px;
+    right: 30px; /* Position it to the left of the button */
+    animation: moveArrow 2s infinite ease-in-out; /* Add the left-to-right animation */
+    color: whitesmoke;
+  }
+  
+  /* Arrow Animation Effect for Large Screens */
+  @keyframes moveArrow {
+    0% {
+      left: -40px; /* Start off the screen on the left */
+    }
+    50% {
+      left: 10px; /* Move towards the button */
+    }
+    100% {
+      left: -40px; /* Move back to the left */
+    }
+  }
+  
+  /* Arrow Animation Effect for Small Screens */
+  @media (max-width: 768px) {
+
+    .cta-arrow {
+        font-size: 20px;
+    }
+  }
+  
+
+  
+  /* CTA Button Styling */
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: linear-gradient(90deg,#ff7700, #ff007f, #ff007f);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: glowing 1.5s ease-in-out infinite;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
+  }
+  
+
+  /* Glowing Effect Animation */
+  @keyframes glowing {
+    0% {
+      background: linear-gradient(90deg, #ff7700, #ff007f,  #ff007f);
+    }
+    50% {
+      background: linear-gradient(90deg, #ff007f, #ff7d00, #ff007f);
+    }
+    70% {
+      background: linear-gradient(90deg, #ff007f,  #ff007f, #ff7700);
+    }
+  }
+
+  
+  
 .first-carousel {
     display: flex;
     transition: transform 1s ease-in-out;
@@ -658,6 +758,12 @@ a {
 }
 
 @media (max-width: 768px) {
+
+
+    iframe{
+        height: 650px;
+        
+    }
     .first-card-content h3 {
         font-size: 22px;
     }
@@ -672,22 +778,24 @@ a {
     }
 
     .first-carousel-item {
-        height: 80vh; /* Ensuring each carousel item takes up full viewport height */
+        height: 100vh; /* Ensuring each carousel item takes up full viewport height */
         top: 90%;
+        padding-top: 90px;
 
         
     }
     
     .first-carousel-card img {
-        width: 100%;/* make this full on screen*/
-        left: 10%;
+        width: 120%;/* make this full on screen*/
+        left: 6%;
+        bottom: -10%;
         
     }
 
     .first-carousel-container {
         width: 100%;
         overflow: hidden;
-        height: 80vh; /* Full screen height */
+        height: 100vh; /* Full screen height */
         position: relative;
     
     }
@@ -725,7 +833,7 @@ a {
 }
 
 .foot:hover{
-     background-color:  #007f9f /*rgba(68, 85, 103, 0.943)*/ ; 
+     background-color: black/*rgba(68, 85, 103, 0.943)*/ ; 
     color: white;
 }
 
@@ -783,80 +891,51 @@ a {
     /* height: 750px; */
     align-items: flex-start;
     transition: transform 3s ease-in-out;
+    background-color: black;
 
 }
 
 
 .featured-product{
     unicode-bidi: isolate;
-    width: 20%;
-    padding: 0px;
+    width: 30%;
+    padding: 10px;
+    padding: 10px;
+    background-color: white;
 }
 
 
-
-.feature-cont1{
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.879),
-    rgba(255, 255, 255, 0.516), 
-    rgba(255, 255, 255, 0) 200px), url(express.jpeg);
-    background-size: cover;
-    height: 300px;
-    background-repeat: no-repeat;
-    background-position: center;
-    align-items: center;
-    position: relative;
-    transition: 3s ease-in-out;
-    margin: 20px 10px ;
-    
-
+.featured-product img{
+    position: inherit;
+    width: 80%;
+    margin: 10px;
 }
 
-
-.feature-cont1 h3{
-    position: relative;
-    font-family: calibri;
-    color: black;
-    font-weight: 600;
-    text-align: center;
-    top: 10px;
-}
-
-
-.feature-cont1 .ft{
-    position: relative;
-    top: 55%;
-    text-align: right;
+.featured-product .animated-box {
     width: 100%;
-    
-}
+    background: none;
+    box-shadow: none;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    display: block;
+    position: relative;
+    padding-top: 40px; /* To make space for the image sticking out */
+  }
 
+.featured-product-button{
+    display: flex;
+    flex-direction: column;
 
-
-.feature-cont1 .ft span{
-    background-color: rgba(181, 181, 181, 0.829);
-    color: black;
-    font-size: 12px;
-    padding: 5px 20px;
-    font-family: 'OpenSansRegular',sans-serif;
-    font-weight: 600;
-}
-
-
-.feature-cont1 .ft button{
-    background-color:   rgb(4, 38, 100);
+    }
+.featured-product-button button{
+    background-color:  #057591;
+    padding: 10px 30px;
     border: none;
     color: white;
-    padding: 10px 15px;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 10px 20px;
-    transition: 1s;
-}
-
-
-.feature-cont1 .ft button:hover{
-    background-color: black;
+    margin: 10px;
+    border-radius: 10px ;
 }
 
 
@@ -871,74 +950,6 @@ a {
 
 }
 
-.browsecont{
-    display: block;
-    background-color:  rgba(239, 239, 239, 0.895);
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    overflow: hidden;
-    margin:10px;
-    unicode-bidi: isolate;
-    width: 260px;
-    height: 300px;
-    transition:0.3s ease-in-out;
-    
-
-}
-
-
-.browsecont img{
-    cursor: pointer;
-    height: 240px;
-    width: 100%;
-}
-
-.browsecont:hover{
-    display: block;
-    height: 500px;
-
-}
-
-
-.browsecont span{
-    display: block;
-    padding: 10px;
-    cursor: pointer;
-    font-family: sans-serif;
-    transition: .3s;
-}
-
-.spandro{
-    position: relative;
-
-    height: 0px;
-    margin-bottom: 0;
-
-}
-
-.browsecont span:hover{
-    background-color:  rgb(4, 38, 100);
-    color: white;
-    border-bottom: 1px solid whitesmoke;
-}
-
-
-
-.browsecont p{
-    padding: 30px 5px;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: rgba(239, 239, 239, 0.895);
-    display: table-cell;
-
-}
-
-/* 
-.browsecont:hover .solution{
-    margin-top: 1000px;
-} */
 
 
 
@@ -1814,7 +1825,7 @@ form{
 
 
   .footer {
-    background-color: #0a1a3a;
+    background-color: rgb(7, 1, 1);
     color: #fff;
     padding-bottom: 40px;
   }
@@ -2238,6 +2249,7 @@ form{
 
 .browse{
     display: block;
+    padding-top: 20px;
 }
 
 .browsecont{
@@ -2388,9 +2400,7 @@ display: block;
     left: 1%;
 }
 
-.up{
-    display: none;
-}
+
 
 
 
@@ -2536,6 +2546,7 @@ display: block;
             max-width: 500px;
             height: 400px;
             padding: 30px;
+            background-color: black;
         }
         
         /* Hide product details by default */
@@ -2550,7 +2561,7 @@ display: block;
 
 
         .product-detail-container {
-            background: white;
+            color: white ;
         }
         
         .product-name {
@@ -2586,12 +2597,13 @@ display: block;
             justify-content: space-between;
             text-align: left;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
         
         .product-description {
             flex: 1;
             font-size: 1.0em;
-            color: #555;
+            color: #c7c7c7;
             margin: 0px 20px 0px 0px;
         }
         
@@ -2612,7 +2624,7 @@ display: block;
         }
         
         .add-to-cart {
-            background: #0b4f99;
+            background: #0184a5;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -2622,11 +2634,12 @@ display: block;
             font-weight: bold;
             margin-top: 30px;
             width: 200px;
+            transition: .3s ease-in-out;
             
         }
         
         .add-to-cart:hover {
-            background: #0056b3;
+            background: #019ee1;
         }
         
         .cart-icon img{
@@ -2651,6 +2664,12 @@ display: block;
 
             gap: 20px;
             }
+
+            .product-dt {
+                flex-direction: column;
+            }
+            
+            
             .thumbnail-list {
                 width: 100%;
                 max-height: none;
@@ -2802,15 +2821,16 @@ display: block;
             }
         }
 
-
+        .animated-cont{
+            padding: 20px;
+            width: 100%;
+            margin: 0px auto;
+        }
         .animated-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             justify-content: space-between;
-            padding: 20px;
-            width: 90%;
-            margin: 0px auto;
           }
           
           .animated-box {
@@ -2840,7 +2860,7 @@ display: block;
             height: 100px;
             overflow: hidden;
             border-radius: 10px; /* Round the image corners */
-            background-color: rgb(1, 32, 105);
+            background-color:  #007f9f;
           }
           
           .image-wrapper img {
@@ -2859,26 +2879,47 @@ display: block;
           }
           
           .description-wrapper   h2 {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 10px;
           }
           
+
+
+
           .description-wrapper   p {
             font-size: 16px;
-            color: #666;
+            color: #515050;
           }
           
+          .stars {
+            color:#ff7700;
+            font-weight: bold;
+        }
+
           @media (max-width: 768px) {
             .animated-box {
-              width: 100%;
+              width: 90%;
+              margin: auto;
+            }
+
+            .description-wrapper   h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+              }
+              
+    
+            .animated-container {
+                
+                width: 100%;
+              }
+              
+              .info-section {
+                flex: 1;
+                max-width: 100%;
+
             }
 
 
-            .animated-container {
-
-                width: 100%;
-              }
-            
           }
           
 
@@ -2886,7 +2927,7 @@ display: block;
           
    
           .nav-container {
-            background-color: rgb(1, 45, 100);
+            background-color: #027b9a;
             position: relative;
             margin: auto;
           }
@@ -2914,7 +2955,7 @@ display: block;
           }
           
           .categories button:hover {
-            background-color: #077588;
+            background-color: black;
           }
           
           .menu-icon {
@@ -2982,6 +3023,7 @@ display: block;
           .product-box .price {
             font-size: 18px;
             font-weight: bold;
+            color: rgb(154, 3, 3);
           }
           
           .product-box .model,
