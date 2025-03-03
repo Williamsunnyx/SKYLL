@@ -79,7 +79,7 @@ a {
 .dropuk{
     display: flex;
     align-items: center;
-    background-color:  rgb(209, 207, 207);
+    background-color:  rgb(255, 255, 255);
     justify-content: space-between;
     padding: 10px;
     flex-wrap: wrap;
@@ -91,6 +91,9 @@ a {
     align-items: center;
 }
 
+.small-nav .dropdown-content{
+    right: 10px;
+}
 .dropdown-content{
      background: radial-gradient(circle, black,rgb(15, 2, 2),black);
      padding: 10px;
@@ -662,6 +665,76 @@ iframe{
   }
 
   
+
+
+.wcucontainer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+.wcugrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.wcufeature {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left;
+}
+.wcuicon-box {
+    width: 50px;
+    height: 50px;
+    background: #e47703;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+.wcuicon-box::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color:  #e47703 transparent transparent transparent;
+}
+.wcuicon-box::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background:  #e47703;
+}
+.wcuicon {
+    font-size: 460px;
+}
+.wcucontainer h2 {
+    color: #333;
+    margin-top: 40px;
+}
+@media (max-width: 600px) {
+    .wcugrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
   
 .first-carousel {
     display: flex;
@@ -1078,7 +1151,8 @@ iframe{
     justify-content: space-around;
     align-items: flex-start;
     position: relative;
-    bottom: 120px;
+    margin-top: 20px;
+
 }
 
 .form{
@@ -1102,7 +1176,7 @@ iframe{
 
 .form .smm{
     font-size: 22px;
-    color:  rgb(7, 60, 160);
+    color:  #ff7700;
     margin-bottom: 20px;
     font-weight: 200;
 }
@@ -1117,7 +1191,7 @@ iframe{
     display: inline-block;
     padding: 10px 20px;
     color: #fff;
-    background-color:  rgb(4, 38, 100);
+    background-color:  #078fb1;
     text-decoration: none;
     border-radius: 5px;
     margin: 20px 0px;
@@ -1125,6 +1199,7 @@ iframe{
     position: relative;
     left: 70%;
     cursor: pointer;
+    border: none;
 }
 
 .sectioning {
@@ -1160,8 +1235,8 @@ iframe{
     height: 10px;
     background-image: repeating-linear-gradient(
       -45deg,
-      rgb(7, 60, 158),
-      rgb(7, 60, 158) 10px,
+      #078fb1,
+      #078fb1 10px,
       transparent 10px,
       transparent 20px
     );
@@ -1194,8 +1269,8 @@ iframe{
     border: none;
     background-image: repeating-linear-gradient(
       -45deg,
-      rgb(7, 60, 158),
-      rgb(7, 60, 158) 10px,
+      #078fb1,
+      #078fb1 10px,
       transparent 10px,
       transparent 20px
     );
@@ -1215,7 +1290,7 @@ form{
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 1.3px solid rgb(7, 72, 195);
+    border: 1.3px solid  #078fb1;
     overflow: hidden;
     
 }
@@ -1247,7 +1322,7 @@ form{
   input[type="submit"] {
     display: block;
     padding: 6px 30px;
-    background-color:  rgb(4, 38, 100);
+    background-color:   #078fb1;
     color: #fff;
     cursor: pointer;
     border: none;
@@ -1263,7 +1338,7 @@ form{
   input[type="reset"] {
     display: block;
     padding: 6px 30px;
-    border: 2px solid rgb(4, 38, 100);
+    border: 2px solid  #078fb1;
     color: black;
     cursor: pointer;
     font-size: 16px;
@@ -1286,11 +1361,11 @@ form{
 
 .formicon i{
     font-size: 21px;
-    color: rgb(5, 59, 159);
+    color: #ff7700;
 }
 
   .poly{
-    background-color:  rgb(4, 38, 100);
+    background-color:  #078fb1;
     height: 140px;
     width: 1000;
     offset: 151;
@@ -1417,7 +1492,7 @@ form{
   }
   
   .navigation-dots .dot.active {
-    background-color: rgb(7, 58, 153)
+    background-color: #ff7700
   }
 
 
@@ -2004,8 +2079,7 @@ form{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(4, 38, 100) ;
-    background-color:  #0b265b;
+    background-color:   #057591;
     transition: 0.5s;
     z-index: 1000;
     overflow-x: hidden;
@@ -2058,11 +2132,13 @@ form{
     font-weight: bolder;
     color: white;
     width: 15%;
-    background-color:  rgb(4, 38, 100);
-    padding: 5px 10px 5px 30px;
+    background-color:  #057591;
+    padding: 3px 10px 3px 30px;
     border-radius: 0px 10px 10px 0px;
     display: none;
-    height: 50px;
+    height: 45px;
+    margin-top: 30px;
+    
 }
 .openNav b{
     color: whitesmoke;
@@ -2268,7 +2344,7 @@ form{
 
 .dropdown-content b{
     font-size: 18px;
-    color: rgb(101, 101, 101);
+    color: rgb(238, 235, 235);
 }
 
 .solution{
@@ -2937,6 +3013,7 @@ display: block;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
           }
           
