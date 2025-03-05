@@ -20,14 +20,26 @@
 <div id="view">
  
   <header>
+
     <nav>
-      <a href="">Home</a>
-      <a href="">Contact</a>
+      <a href="vantage.html">Home</a>
+      <a href="contact.html">Contact</a>
       <a href="">Info</a>
     </nav>
+
+    
+  
   </header>
+
   
 <div class="carousel">
+
+  <div class="timing-box">
+    <b>WELCOME BACK!</b>
+    <hr>
+    <b class="timimg" id="clock"></b> <br>
+    <b class="date" id="date"></b>
+</div>
 
     <div class="list">
 
@@ -230,6 +242,28 @@ function startLoaderTimeout() {
         // Start loader timeout after 3 seconds
         setTimeout(startLoaderTimeout, 3000);
 
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            
+            // Convert to 12-hour format
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Handle midnight (0 should be 12)
+            hours = hours.toString().padStart(2, '0');
+            
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+            
+            // Update date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString(undefined, options);
+            document.getElementById('date').style.color=' #f1683a'
+        }
+        
+        setInterval(updateClock, 1000);
+        updateClock();
    
 </script></body>
 </html>
