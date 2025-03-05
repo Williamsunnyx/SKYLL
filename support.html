@@ -124,6 +124,15 @@
     
         <div class="list">
     
+          <div class="show" >
+            <a href="vantage.html"> <span class="span" >Home</span></a> 
+            <div class="showcontent">
+                
+                <div></div>
+
+            </div>
+        </div>
+
             <div class="show" >
               <a href="product.html"> <span class="span" >Products</span></a> 
                 
@@ -1052,25 +1061,25 @@
     <!-- Process box 1 -->
     <div class="process-box" style="background-color: #010925;">
       <h3>01</h3>
-      <p>Step 1: Schedule your repair request online or by phone. It's quick and easy to book an appointment at your convenience.</p>
+      <p>Schedule your repair request online or by phone. It's quick and easy to book an appointment at your convenience.</p>
     </div>
 
     <!-- Process box 2 -->
-    <div class="process-box" style="background-color: #060b51;">
+    <div class="process-box" style="background-color: #012565;">
       <h3>02</h3>
-      <p>Step 2: Our technician arrives at your location or we pick up your device to start the repair process right away.</p>
+      <p>Our technician arrives at your location or we pick up your device to start the repair process right away.</p>
     </div>
 
     <!-- Process box 3 -->
-    <div class="process-box" style="background-color: #2c034f;">
+    <div class="process-box" style="background-color: #c66803;">
       <h3>03</h3>
-      <p>Step 3: Your device gets repaired using high-quality parts, ensuring it performs like new.</p>
+      <p>Your device gets repaired using high-quality parts, ensuring it performs like new.</p>
     </div>
 
     <!-- Process box 4 -->
-    <div class="process-box" style="background-color: #026ba0 ;">
+    <div class="process-box" style="background-color: #0490a2 ;">
       <h3>04</h3>
-      <p>Step 4: We deliver your device back to you, ensuring everything is working perfectly and hassle-free.</p>
+      <p>We deliver your device back to you, ensuring everything is working perfectly and hassle-free.</p>
     </div>
   </div>
 </section>
@@ -1240,9 +1249,18 @@ window.addEventListener("scroll", function () {
     if (currentScroll < lastScrollTop) {
         // User is scrolling up, show the header
         header.style.top = "0";
+        header.style.backgroundColor = "";
+        document.querySelectorAll('.span').forEach(function(element) {
+        element.style.color = '';  // Reset to default color (based on CSS or body default)
+    });
     } else {
         // User is scrolling down, hide the header
         header.style.top = "-100px"; // Adjust based on header height
+        header.style.backgroundColor = "black";
+        document.querySelectorAll('.span').forEach(el => {
+        el.style.color = "white";
+        });
+
     }
 
     lastScrollTop = currentScroll;

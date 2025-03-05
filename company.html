@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market</title>
+    <title>Company</title>
     <link rel="stylesheet" href="product.css">
     <link rel="stylesheet" href="vantage.css">
     <link rel="stylesheet" href="market.css">
@@ -124,9 +124,18 @@
     
     
         <div class="list">
+
+          <div class="show" >
+            <a href="vantage.html"> <span class="span" >Home</span></a> 
+            <div class="showcontent">
+                
+                <div></div>
+
+            </div>
+        </div>
     
             <div class="show" >
-              <a href="product.html"> <span class="span" >Products</span></a> 
+              <a href="product.html"><span class="span" >Products</span></a> 
                 
                 <div class="showcontent">
     
@@ -893,6 +902,7 @@
 
       <script type="text/javascript">
 
+
 let lastScrollTop = 0;
 const header = document.querySelector("header");
 
@@ -902,9 +912,18 @@ window.addEventListener("scroll", function () {
     if (currentScroll < lastScrollTop) {
         // User is scrolling up, show the header
         header.style.top = "0";
+        header.style.backgroundColor = "";
+        document.querySelectorAll('.span').forEach(function(element) {
+        element.style.color = '';  // Reset to default color (based on CSS or body default)
+    });
     } else {
         // User is scrolling down, hide the header
         header.style.top = "-100px"; // Adjust based on header height
+        header.style.backgroundColor = "black";
+        document.querySelectorAll('.span').forEach(el => {
+        el.style.color = "white";
+        });
+
     }
 
     lastScrollTop = currentScroll;

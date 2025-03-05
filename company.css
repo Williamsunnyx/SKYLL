@@ -37,10 +37,11 @@
 .market-box button{
     padding: 8px 10px;
     border-radius: 4px;
-    background-color:  rgb(4, 38, 100);
+    background-color:  #f78b18;
     color: white;
     font-weight: 600;
     float: right;
+    border: none;
 }
 
 

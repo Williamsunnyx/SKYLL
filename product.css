@@ -126,6 +126,7 @@ body.fade-out {
 
 .productbody .h2 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin: 20px 0px 5px 10px;
   font-size: 45px;
@@ -149,6 +150,7 @@ body.fade-out {
 .vertical-tabs h2{
   font-size: 17px;
 }
+
 
 .dropdown-title {
   font-size: 16px;
@@ -187,7 +189,7 @@ body.fade-out {
 }
 
 .dropdown-list li:hover {
-  background-color: rgb(4, 38, 100);
+  background-color:  #e47703;
   color: white;
 }
 
@@ -272,7 +274,7 @@ body.fade-out {
   }
   
   .hidden-list li:hover {
-    background-color:  rgb(4, 38, 100);
+    background-color:   #e47703;
     color: white;
   }
   
@@ -355,10 +357,17 @@ header .stay{
     }
     .tabcontent-container{
         padding: 10px;
+        
     }
 
+    .productbody .h2 {
+      display: block;
 
+    }
     
+    .productbody .h2 span{
+      font-size: 17px;
+    }
 } 
 
 

@@ -29,7 +29,7 @@ header{
     height: auto;
     padding-top: 20px;
     margin: auto;
-    box-shadow: 0px 5px 10px gray;
+    box-shadow: 0px 5px 10px rgb(63, 63, 63);
     position: sticky;
     width: 100%;
     top: 0;
@@ -670,7 +670,7 @@ iframe{
 .wcucontainer {
     width: 90%;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 0px auto;
     padding: 20px;
     text-align: center;
 }
@@ -678,9 +678,11 @@ iframe{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    align-items: flex-start;
+    
 }
 .wcufeature {
-    background: white;
+    background: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -688,17 +690,21 @@ iframe{
     text-align: left;
 }
 .wcuicon-box {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: #e47703;
     color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    position: absolute;
-    top: -10px;
+    position: relative;
+    top: -1px;
     left: -10px;
+    box-shadow: 0px 0px 10px rgb(21, 134, 240);
+    font-size: 30px;
+    margin: auto;
+    z-index: 1;
 }
 .wcuicon-box::after {
     content: "";
@@ -725,7 +731,7 @@ iframe{
 }
 .wcucontainer h2 {
     color: #333;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 @media (max-width: 600px) {
     .wcugrid {
@@ -1580,7 +1586,7 @@ form{
   }
   
   .hidden-list li:hover {
-    background-color:  rgb(4, 38, 100);
+    background-color:  rgb(243, 122, 16);
     color: white;
   }
   
@@ -3070,20 +3076,20 @@ display: block;
             width: 100%;
           }
 
-          .product-container    .animated-box {
-            box-shadow: none;
-          }
+
           
           .product-box {
             width: 200px;
             margin: 20px auto;
-            border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
             opacity: 0;
             transform: translateY(30px);
             transition: transform 0.5s ease-out, opacity 0.5s ease-out;
             visibility: hidden;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #d1ebf8d3;
+
           }
           
           .product-box.show {
@@ -3100,7 +3106,14 @@ display: block;
           .product-box .price {
             font-size: 18px;
             font-weight: bold;
-            color: rgb(154, 3, 3);
+            background-color: rgb(154, 2, 2);
+            color: white;
+            width: 50px;
+            padding: 6px 4px;
+            position: absolute;
+            left: 120px;
+            top: -px;
+            clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
           }
           
           .product-box .model,
@@ -3118,5 +3131,74 @@ display: block;
               justify-content: flex-start;
               margin: auto;
             }
+
+
+            .product-box .price {
+                left: 90px;
+                clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+              }
           }
           
+
+          /* Promo Section */
+.promo-section {
+    width: 100%;
+    background: black;
+    overflow: hidden;
+    padding: 30px;
+    margin:  auto;
+    position: relative;
+    bottom: 10px;
+}
+
+/* Promo Container */
+.promo-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Promo Box */
+.promo-box {
+    flex: 1;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Repair Box */
+.repair {
+    background: #ab5c2b;
+}
+
+/* Products Box */
+.products {
+    background: #027b9a;
+}
+
+/* Hover Effect */
+.promo-box:hover {
+    transform: translateY(-20px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Promo Button */
+.promo-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: rgb(255, 255, 255);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.promo-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}

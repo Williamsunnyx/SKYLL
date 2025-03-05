@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market</title>
+    <title>Partner</title>
     <link rel="stylesheet" href="product.css">
     <link rel="stylesheet" href="vantage.css">
     <link rel="stylesheet" href="market.css">
@@ -124,6 +124,15 @@
     
     
         <div class="list">
+
+          <div class="show" >
+            <a href="vantage.html"> <span class="span" >Home</span></a> 
+            <div class="showcontent">
+                
+                <div></div>
+
+            </div>
+        </div>
     
             <div class="show" >
               <a href="product.html"> <span class="span" >Products</span></a> 
@@ -582,43 +591,92 @@
 
 <!--Market Contents-->
 <div class="market-container">
+
   <span>Partners</span>
+
+<div class="all-partner">
+
+  <div class="intro-partner">
+    <img src="partnerhandshake.jpg" alt="">
+  <h3>Our Commitment to Great Partnerships</h4>
+<p> At SKYCAT, we take pride in fostering strong, long-term partnerships built on trust, reliability, 
+  and mutual success. Our dedication to collaboration has allowed us to consistently 
+  deliver exceptional deals and value to our partners.Through commitment to excellence, we ensure that 
+  every partnership is backed by Unmatched Quality, Competitive Pricing & Exclusive Deals and Consistent Innovation.
+  <p><b>Let’s build something great—together!</b></p>
+  
+  <div class="partner-btn">
+    <button>Join Us</button>
+    <button>Enquire</button>
+  </div>
+</p>
+
+
+
+
+
+
+
+
+  </div>
+
 
 <div class="partner-container">
   <!-- Vertical Tabs -->
   <div class="tab-list">
-      <button class="tab-link active" data-target="content1">Partner 1</button>
-      <button class="tab-link" data-target="content2">Partner 2</button>
-      <button class="tab-link" data-target="content3">Partner 3</button>
-      <button class="tab-link" data-target="content4">Partner 4</button>
-      <button class="tab-link" data-target="content5">Partner 5</button>
+      <button class="tab-link active" data-target="content1">Software Partners</button>
+      <button class="tab-link" data-target="content2">Affiliate Partners</button>
+
   </div>
 
   <!-- Content Area -->
   <div class="content-area">
       <div id="content1" class="partner-content active">
-          <h2>Partner 1</h2>
-          <p>Details about Partner 1...</p>
+          <h2>OUR SOFTWARE PARTNERS</h2>
+          <div class="partneriner">
+            <img src="icon1.png" alt="">
+            <img src="icon2.jpg" alt="">
+            <img src="icon3.jpg" alt="">
+            <img src="icon4.jpg" alt="">
+            <img src="icon5.jpg" alt="">
+            <img src="icon6.jpg" alt="">
+            <img src="icon7.avif" alt="">
+            <img src="icon8.jpg" alt="">
+            <img src="icon9.jpg" alt="">
+            <img src="icon10.png" alt="">
+            <img src="icon11.jpg" alt="">
+
+          </div>
       </div>
+
       <div id="content2" class="partner-content">
-          <h2>Partner 2</h2>
-          <p>Details about Partner 2...</p>
+        <h2>OUR AFFILIATE PARTNERS</h2>
+        <div class="partneriner">
+          <img src="icon12.png" alt="">
+          <img src="icon13.jpg" alt="">
+          <img src="icon14.png" alt="">
+          <img src="icon15.png" alt="">
+          <img src="icon16.jpg" alt="">
+          <img src="icon17.webp" alt="">
+          <img src="icon18.webp" alt="">
+          <img src="icon19.jpg" alt="">
+          <img src="icon1.png" alt="">
+          <img src="icon21.webp" alt="">
+          <img src="icon6.jpg" alt="">
+          <img src="icon10.png" alt="">
+
+
+        </div>
       </div>
-      <div id="content3" class="partner-content">
-          <h2>Partner 3</h2>
-          <p>Details about Partner 3...</p>
-      </div>
-      <div id="content4" class="partner-content">
-          <h2>Partner 4</h2>
-          <p>Details about Partner 4...</p>
-      </div>
-      <div id="content5" class="partner-content">
-          <h2>Partner 5</h2>
-          <p>Details about Partner 5...</p>
+
       </div>
   </div>
+
+
 </div>
 </div>
+
+
 
 
 
@@ -761,6 +819,7 @@
 
       <script type="text/javascript">
 
+
 let lastScrollTop = 0;
 const header = document.querySelector("header");
 
@@ -770,9 +829,18 @@ window.addEventListener("scroll", function () {
     if (currentScroll < lastScrollTop) {
         // User is scrolling up, show the header
         header.style.top = "0";
+        header.style.backgroundColor = "";
+        document.querySelectorAll('.span').forEach(function(element) {
+        element.style.color = '';  // Reset to default color (based on CSS or body default)
+    });
     } else {
         // User is scrolling down, hide the header
         header.style.top = "-100px"; // Adjust based on header height
+        header.style.backgroundColor = "black";
+        document.querySelectorAll('.span').forEach(el => {
+        el.style.color = "white";
+        });
+
     }
 
     lastScrollTop = currentScroll;
